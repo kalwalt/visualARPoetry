@@ -1,9 +1,13 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/Visual_AR_Poetry.png">
-    <Header msg="Welcome to Visual AR Poetry App"/>
-    <Intro title="A generative app for visual poetry" text="Visualize every day a different visual poetry"/>
+  <div class="container">
+    <div class="columns is-centered is-vcentered is-mobile">
+      <img class="column is-narrow has-text-centered" alt="Vue logo" src="../assets/Visual_AR_Poetry.png">  
+    </div>
   </div>
+  <div class="has-text-centered">
+    <Header class="title" msg="Welcome to Visual AR Poetry App"/>
+    <Intro class="subtitle" title="A generative app for visual poetry" text="Visualize every day a different visual poetry"/>
+  </div> 
 </template>
 
 <script>
