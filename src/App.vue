@@ -1,22 +1,10 @@
 <template>
-  <img alt="Vue logo" src="./assets/Visual_AR_Poetry.png">
-  <Header msg="Visual AR Poetry"/>
-  <Intro title="A generative app for visual poetry" text="Visualize every day a different visual poetry"/>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </div>
+  <router-view/>
 </template>
-
-<script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import Header from './components/Header.vue';
-import Intro from './components/Intro.vue';
-
-@Options({
-  components: {
-    Header,
-    Intro,
-  },
-})
-export default class App extends Vue {}
-</script>
 
 <style>
 #app {
@@ -25,6 +13,18 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+#nav {
+  padding: 30px;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
