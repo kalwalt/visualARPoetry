@@ -1,26 +1,16 @@
 <template>
-  <div class="container">
-    <div class="columns is-centered is-vcentered is-mobile">
-      <img class="column is-narrow has-text-centered" alt="Vue logo" src="../assets/Visual_AR_Poetry.png">  
-    </div>
-  </div>
-  <div class="has-text-centered">
-    <Header class="title" msg="Welcome to Visual AR Poetry App"/>
-    <Intro class="subtitle" title="A generative app for visual poetry" text="Visualize every day a different visual poetry"/>
-  </div> 
+  <Layout/>
 </template>
 
 <script>
 // @ is an alias to /src
-import Header from '@/components/Header.vue'
-import Intro from '@/components/Intro.vue'
+import Layout from '@/components/Layout.vue'
 
 
 export default {
   name: 'Home',
   components: {
-    Header,
-    Intro
+    Layout
   }
 }
 </script>

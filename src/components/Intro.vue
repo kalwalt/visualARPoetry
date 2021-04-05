@@ -1,7 +1,9 @@
 <template>
     <div>
         <h2>{{ title }}</h2>
-        <p>{{ text }}</p>
+        <p class="block">{{ intro }}</p>
+        <img class="image container block" title="Image to track, download and print it!" src="https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/fishes.jpg">
+        <p class="block">{{ text }} </p>
     </div>
 </template>
 
@@ -11,11 +13,13 @@ import { Options, Vue } from 'vue-class-component';
 @Options({
   props: {
     title: String,
+    intro: String,
     text: String
   }
 })
 export default class Intro extends Vue {
   title!: string;
+  intro!: string;
   text!: string
 }
 </script>
