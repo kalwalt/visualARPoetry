@@ -1,8 +1,5 @@
 <template>
-    <div id="renderElement">
-        <div id="css"></div>
-        <div id="webgl" class="webgl"></div>
-    </div>
+    <div></div>
 </template>
 
 <script>
@@ -27,7 +24,7 @@ export default {
     methods: {
         init() {
 
-            ARnft.init(640, 480, "../DataNFT/pinball", 'config.json', true)
+            ARnft.init(640, 480, "../DataNFT/pinball", '../config.json', true)
             .then((nft) => {
                 let mat = new THREE.MeshLambertMaterial({color: 0xff0000});
                 let boxGeom = new THREE.BoxGeometry(1,1,1);
