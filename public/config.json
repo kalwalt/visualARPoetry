@@ -1,5 +1,5 @@
 {
-  "addPath": "ARnft-ES6-react",
+  "addPath": "",
   "cameraPara": "../Data/camera_para.dat",
   "videoSettings": {
     "width": {
@@ -14,7 +14,7 @@
   },
   "loading": {
     "logo": {
-      "src": "arNFT-logo.gif",
+      "src": "../arNFT-logo.gif",
       "alt": "arNFT.js logo"
     },
     "loadingMessage": "Loading, please wait..."
