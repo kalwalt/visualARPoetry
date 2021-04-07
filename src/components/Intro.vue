@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h2>{{ title }}</h2>
+        <h2 class="subtitle">{{ title }}</h2>
         <p class="block">{{ intro }}</p>
         <img class="image container block" title="Image to track, download and print it!" src="https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/fishes.jpg">
         <p class="block">{{ text }} </p>
