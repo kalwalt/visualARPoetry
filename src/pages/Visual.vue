@@ -1,7 +1,5 @@
 <template>
-    <div id="visual">
-        <ARnftScene/>
-    </div>  
+  <ARnftScene/>
 </template>
 
 <script>
@@ -24,28 +22,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-#loading {
-  width: 100%;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.45);
-  z-index: 9999999;
-}
-
-#loading img {
-    height: 5em;
-}
-
-#loading span{
-  color: black;
-  font-weight: bold;
 }
 
 .ui {
@@ -90,38 +66,6 @@ body {
   font-size: 0.75rem;
   color: inherit;
   text-decoration: none;
-}
-
-#app {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-  height: 100%;
-}
-
-#video {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
-}
-
-#canvas {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 100;
-
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover;
 }
 
 #arvideo {

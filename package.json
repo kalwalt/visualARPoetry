@@ -23,7 +23,7 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "@kalwalt/ar-nft": "^0.8.5",
+    "@kalwalt/ar-nft": "https://github.com/webarkit/ARnft.git#e41648d46286842735f57713d8fb163838a145a0",
     "babel-eslint": "^10.1.0",
     "bulma": "^0.9.2",
     "eslint": "^6.7.2",
