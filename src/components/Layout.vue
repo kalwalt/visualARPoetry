@@ -5,9 +5,8 @@
     </div>
   </div>
   <div class="has-text-centered">
-    <Header class="title" msg="Welcome to the Visual AR Poetry App"/>
+    <Header msg="Welcome to the Visual AR Poetry App"/>
     <Intro
-    class="subtitle" 
     title="A generative app for visual poetry" 
     intro="Visualize every day a different visual poetry"
     text="Download the picture and print it! You will track with your camera Phone to display a generated image!"
