@@ -4,6 +4,7 @@
         <p class="block">{{ intro }}</p>
         <img class="image container block" title="Image to track, download and print it!" src="https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/fishes.jpg">
         <p class="block">{{ text }} </p>
+        <a href="/visual">Visual page</a>
     </div>
 </template>
 
