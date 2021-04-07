@@ -7,7 +7,6 @@
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
     <router-link class="navbar-item" to="/">Home</router-link>
-    <router-link class="navbar-item" to="/visual">Visual</router-link>
     <router-link class="navbar-item" to="/about">About</router-link>
   </div>
   </div>
