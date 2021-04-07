@@ -1,5 +1,8 @@
 <template>
-     <ARnftScene/>
+    <div id="visual">
+        <ARnftScene/>
+    </div>
+     
 </template>
 
 <script>
