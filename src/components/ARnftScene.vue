@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import * as THREE from 'three'
 import { ARnft } from '@kalwalt/ar-nft'
 
 // Components
@@ -33,13 +32,7 @@ export default {
 
             ARnft.init(640, 480, "../DataNFT/pinball", '../config.json', false)
             .then((nft) => {
-                let mat = new THREE.MeshLambertMaterial({color: 0xff0000});
-                let boxGeom = new THREE.BoxGeometry(1,1,1);
-                let cube = new THREE.Mesh( boxGeom, mat);
-                cube.position.z = 90;
-                cube.scale.set(180,180,180);
-
-                nft.add(cube);
+                nft.addImage('https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg', 0xbbbbff, 160);
             }).catch((error) => {
             console.log(error);
             });
