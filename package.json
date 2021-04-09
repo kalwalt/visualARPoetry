@@ -14,7 +14,7 @@
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
-    "@kalwalt/ar-nft": "https://github.com/webarkit/ARnft.git#d5f6b3b5e37cda5a83d8334899d12d87847e0112",
+    "@kalwalt/ar-nft": "^0.8.6",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
