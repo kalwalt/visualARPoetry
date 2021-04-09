@@ -8,7 +8,7 @@
     <Header msg="Welcome to the Visual AR Poetry App"/>
     <Intro
     title="A generative app for visual poetry" 
-    intro="Visualize every day a different visual poetry"
+    intro="Visualize every day a different visual poetry, made with text of poems, geometries and glitch noises."
     text="Download the picture and print it! You will track with your camera Phone to display a generated image!"
     />
   </div> 
