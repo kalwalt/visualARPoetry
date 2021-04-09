@@ -32,7 +32,7 @@ export default {
 
             ARnft.init(640, 480, "../DataNFT/pinball", '../config.json', false)
             .then((nft) => {
-                nft.addImage('https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg', 0xbbbbff, 160);
+                nft.addImage('https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg', 0xbbbbff, 180);
             }).catch((error) => {
             console.log(error);
             });
