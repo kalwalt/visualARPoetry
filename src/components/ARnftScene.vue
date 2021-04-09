@@ -30,7 +30,7 @@ export default {
     methods: {
         init() {
 
-            ARnft.init(640, 480, "../DataNFT/pinball", '../config.json', false)
+            ARnft.init(640, 480, "../DataNFT/fishes", '../config.json', false)
             .then((nft) => {
                 nft.addImage('https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg', 0xbbbbff, 180);
             }).catch((error) => {
