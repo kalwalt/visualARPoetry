@@ -10,7 +10,7 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div id="navbarBasicExample" class="navbar-menu">
+    <div @click="$event.target.classList.toggle('is-active')" id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start has-text-centered">
         <router-link class="navbar-item" to="/">Home</router-link>
         <router-link class="navbar-item" to="/about">About</router-link>
