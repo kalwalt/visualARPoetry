@@ -4,7 +4,7 @@
       <a class="navbar-item" href="/">
         <img class="image " alt="Visual AR Poetry logo" src="./assets/Visual_AR_Poetry.png"> 
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a @click="$event.target.classList.toggle('is-active')" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
