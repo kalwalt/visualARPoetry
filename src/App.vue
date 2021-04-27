@@ -4,13 +4,13 @@
       <a class="navbar-item" href="/">
         <img class="image " alt="Visual AR Poetry logo" src="./assets/Visual_AR_Poetry.png"> 
       </a>
-      <a @click="$event.target.classList.toggle('is-active')" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <a @click="showNav = !showNav" :class="{ 'is-active': showNav }" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div @click="$event.target.classList.toggle('is-active')" id="navbarBasicExample" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu" :class="{ 'is-active': showNav }">
       <div class="navbar-start has-text-centered">
         <router-link class="navbar-item" to="/">Home</router-link>
         <router-link class="navbar-item" to="/about">About</router-link>
@@ -19,6 +19,16 @@
   </div>
   <router-view/>
 </template>
+
+<script>
+    export default {
+          data: function() {
+        return {
+            showNav: false
+        }
+      }
+    }
+</script>
 
 <style>
 body {
