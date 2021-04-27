@@ -11,8 +11,10 @@
       </a>
     </div>
     <div id="navbarBasicExample" class="navbar-menu">
-    <router-link class="navbar-item" to="/">Home</router-link>
-    <router-link class="navbar-item" to="/about">About</router-link>
+      <div class="navbar-start has-text-centered">
+        <router-link class="navbar-item" to="/">Home</router-link>
+        <router-link class="navbar-item" to="/about">About</router-link>
+      </div>
   </div>
   </div>
   <router-view/>
