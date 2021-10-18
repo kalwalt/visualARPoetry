@@ -12,13 +12,14 @@
 <script>
 import { ARnft } from "@webarkit/ar-nft";
 import ARnftThreejs from "@webarkit/arnft-threejs";
-import useBreakpoints from "../useBreakpoints"
+import { vueWindowSizeMixin } from 'vue-window-size/option-api';
 
 // Components
 
 export default {
   name: "ARnftScene",
   components: {},
+  mixins: [vueWindowSizeMixin()],
   data() {
     return {
       camera: null,
@@ -32,11 +33,6 @@ export default {
   methods: {
     init() {
 
-      const { width } = useBreakpoints()
-
-      console.log(width);
-      //let ratio = window.clientWidth / window.clientHeight;
-      //console.log(ratio);
       ARnft.init(
         640,
         480,
@@ -48,8 +44,7 @@ export default {
         .then((nft) => {
           let canvas = document.getElementById("canvas");
           let fov = (0.8 * 180) / Math.PI;
-          // same as above...
-          //let ratio = window.clientWidth / window.clientHeight;
+          let ratio = this.$windowWidth / this.$windowHeight;
           let config = {
             renderer: {
               alpha: true,
@@ -63,7 +58,7 @@ export default {
             },
             camera: {
               fov: fov,
-              ratio: 4 / 3,
+              ratio: ratio,
               near: 0.01,
               far: 1000,
             },
