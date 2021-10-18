@@ -1,48 +1,89 @@
 <template>
-    <div id="loading">
-      <img src="arNFT-logo.gif" alt="arNFT.js logo">
-      <span class="loading-text">Loading, please wait...</span>
-    </div>
-    <div id="app">
-      <canvas id="canvas" width="640" height="480"></canvas>
-      <video id="video" muted playsinline autoplay></video>
-    </div>
+  <div id="loading">
+    <img src="arNFT-logo.gif" alt="arNFT.js logo" />
+    <span class="loading-text">Loading, please wait...</span>
+  </div>
+  <div id="app">
+    <canvas id="canvas" width="640" height="480"></canvas>
+    <video id="video" muted playsinline autoplay></video>
+  </div>
 </template>
 
 <script>
-import { ARnft } from '@kalwalt/ar-nft'
+import { ARnft } from "@webarkit/ar-nft";
+import ARnftThreejs from "@webarkit/arnft-threejs";
 
 // Components
 
 export default {
-    name: 'ARnftScene',
-    components: {},
-    data() {
-        return {
-            camera: null,
-            scene: null,
-            scene2: null,
-            renderer: null,
-            renderer2: null,
-            controls: null
-        }
-    },
-    methods: {
-        init() {
+  name: "ARnftScene",
+  components: {},
+  data() {
+    return {
+      camera: null,
+      scene: null,
+      scene2: null,
+      renderer: null,
+      renderer2: null,
+      controls: null,
+    };
+  },
+  methods: {
+    init() {
+      // ratio not working!
+      let ratio = window.clientWidth / window.clientHeight;
+      ARnft.init(640, 480, ["../DataNFT/fishes"], ["fishes"], "../config.json", false)
+        .then((nft) => {
+          let canvas = document.getElementById("canvas");
+          let fov = (0.8 * 180) / Math.PI;
+          // same as above...
+          //let ratio = window.clientWidth / window.clientHeight;
+          let config = {
+            renderer: {
+              alpha: true,
+              antialias: true,
+              context: null,
+              precision: "mediump",
+              premultipliedAlpha: true,
+              stencil: true,
+              depth: true,
+              logarithmicDepthBuffer: true,
+            },
+            camera: {
+              fov: fov,
+              ratio: 4/3,
+              near: 0.01,
+              far: 1000,
+            },
+          };
+          console.log(ratio);
+          let sceneThreejs = new ARnftThreejs.SceneRendererTJS(
+            config,
+            canvas,
+            nft.uuid,
+            true
+          );
+          sceneThreejs.initRenderer();
 
-            ARnft.init(640, 480, "../DataNFT/fishes", '../config.json', false)
-            .then((nft) => {
-                nft.addImage('https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg', 0xbbbbff, 180);
-            }).catch((error) => {
-            console.log(error);
-            });
-
-        }
+          let nftAddTJS = new ARnftThreejs.NFTaddTJS(nft.uuid);
+          let imgConfig = {w: 1, h: 1, ws: 1, hs: 1};
+          nftAddTJS.addImage(
+            "https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg",
+            'fishes',
+            0xbbbbff,
+            imgConfig,
+            180
+          );
+        })
+        .catch((error) => {
+          console.log(error);
+        });
     },
-    mounted() {
-        this.init();
-    }
-}
+  },
+  mounted() {
+    this.init();
+  },
+};
 </script>
 
 <style scoped>
@@ -92,10 +133,10 @@ export default {
 }
 
 #loading img {
-    height: 5em;
+  height: 5em;
 }
 
-#loading span{
+#loading span {
   color: black;
   font-weight: bold;
 }
