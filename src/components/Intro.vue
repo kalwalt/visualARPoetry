@@ -2,7 +2,7 @@
     <div>
         <h2 class="subtitle">{{ title }}</h2>
         <p class="block">{{ intro }}</p>
-        <img class="image container block" title="Image to track, download and print it!" src="https://media.githubusercontent.com/media/kalwalt/visualARPoetry-backend/main/src/imgs/fishes.jpg">
+        <img class="image container block" title="Image to track, download and print it!" src="https://raw.githubusercontent.com/kalwalt/visualARPoetry-backend/main/src/imgs/fishes.jpg">
         <p class="block">{{ text }} </p>
         <a class="button" href="/visual">Visual page</a>
     </div>
