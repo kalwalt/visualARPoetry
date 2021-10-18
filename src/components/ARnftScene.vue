@@ -10,9 +10,9 @@
 </template>
 
 <script>
-import { getCurrentInstance } from "vue";
 import { ARnft } from "@webarkit/ar-nft";
 import ARnftThreejs from "@webarkit/arnft-threejs";
+import useBreakpoints from "../useBreakpoints"
 
 // Components
 
@@ -30,17 +30,13 @@ export default {
     };
   },
   methods: {
-    setup() {
-      const app = getCurrentInstance();
-      const window = app.appContext.config.globalProperties.window;
-      console.log(window.clientWidth);
-    },
     init() {
-      // ratio not working!
-      //const app = getCurrentInstance();
-      //const window = app.appContext.config.globalProperties.window
-      let ratio = window.clientWidth / window.clientHeight;
-      console.log(ratio);
+
+      const { width } = useBreakpoints()
+
+      console.log(width);
+      //let ratio = window.clientWidth / window.clientHeight;
+      //console.log(ratio);
       ARnft.init(
         640,
         480,
@@ -72,7 +68,6 @@ export default {
               far: 1000,
             },
           };
-          console.log(ratio);
           let sceneThreejs = new ARnftThreejs.SceneRendererTJS(
             config,
             canvas,
