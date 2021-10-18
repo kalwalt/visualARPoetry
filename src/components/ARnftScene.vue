@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { getCurrentInstance } from "vue";
 import { ARnft } from "@webarkit/ar-nft";
 import ARnftThreejs from "@webarkit/arnft-threejs";
 
@@ -29,10 +30,25 @@ export default {
     };
   },
   methods: {
+    setup() {
+      const app = getCurrentInstance();
+      const window = app.appContext.config.globalProperties.window;
+      console.log(window.clientWidth);
+    },
     init() {
       // ratio not working!
+      //const app = getCurrentInstance();
+      //const window = app.appContext.config.globalProperties.window
       let ratio = window.clientWidth / window.clientHeight;
-      ARnft.init(640, 480, ["../DataNFT/fishes"], ["fishes"], "../config.json", false)
+      console.log(ratio);
+      ARnft.init(
+        640,
+        480,
+        ["../DataNFT/fishes"],
+        ["fishes"],
+        "../config.json",
+        false
+      )
         .then((nft) => {
           let canvas = document.getElementById("canvas");
           let fov = (0.8 * 180) / Math.PI;
@@ -51,7 +67,7 @@ export default {
             },
             camera: {
               fov: fov,
-              ratio: 4/3,
+              ratio: 4 / 3,
               near: 0.01,
               far: 1000,
             },
@@ -66,14 +82,20 @@ export default {
           sceneThreejs.initRenderer();
 
           let nftAddTJS = new ARnftThreejs.NFTaddTJS(nft.uuid);
-          let imgConfig = {w: 1, h: 1, ws: 1, hs: 1};
+          let imgConfig = { w: 1, h: 1, ws: 1, hs: 1 };
           nftAddTJS.addImage(
             "https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/kalwalt/visualARPoetry-backend/main/src/imgs/visual_poetry.jpg",
-            'fishes',
+            "fishes",
             0xbbbbff,
+            180,
             imgConfig,
-            180
+            false
           );
+          const tick = () => {
+            sceneThreejs.draw();
+            window.requestAnimationFrame(tick);
+          };
+          tick();
         })
         .catch((error) => {
           console.log(error);
