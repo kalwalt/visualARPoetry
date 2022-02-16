@@ -1,4 +1,14 @@
 module.exports = {
+    //lintOnSave: false,
+    chainWebpack: config => {
+      config.module
+      .rule('js')
+      .use('babel-loader')
+      .options({exclude: file => (
+        /node_modules\/(?!(@webarkit\/ar-nft)\/).*/.test(file) &&
+        !/\.vue\.ts/.test(file)
+      )})
+    },
     pages: {
       index: {
         // entry for the page
