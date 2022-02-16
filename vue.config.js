@@ -1,5 +1,11 @@
 module.exports = {
-    lintOnSave: false,
+    //lintOnSave: false,
+    chainWebpack: config => {
+      config.module
+      .rule('js')
+      .use('babel-loader')
+      .options({exclude: /node_modules[\\\/]@webarkit\/ar-nft/})
+    },
     pages: {
       index: {
         // entry for the page
