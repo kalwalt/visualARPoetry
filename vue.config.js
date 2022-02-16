@@ -4,7 +4,10 @@ module.exports = {
       config.module
       .rule('js')
       .use('babel-loader')
-      .options({exclude: /node_modules[\\\/]@webarkit\/ar-nft/})
+      .options({exclude: file => (
+        /node_modules\/(?!(@webarkit\/ar-nft)\/).*/.test(file) &&
+        !/\.vue\.ts/.test(file)
+      )})
     },
     pages: {
       index: {
